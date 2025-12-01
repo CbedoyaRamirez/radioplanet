@@ -1,99 +1,115 @@
-# FaceGold - Aplicación Exclusiva para Millonarios
+# Radio Planet 🌍📻
 
-FaceGold es una aplicación móvil desarrollada con Ionic y Angular, diseñada exclusivamente para personas millonarias que buscan conectarse con otros miembros de élite.
+Una aplicación móvil interactiva estilo Radio Garden construida con Ionic y Angular, que permite explorar y escuchar emisoras de radio de todo el mundo a través de un globo terráqueo 3D interactivo.
 
-## Características Principales
+## 🎯 Características
 
-### 🔐 Login Premium
-- Animación única al escribir la contraseña que muestra cómo se oculta
-- Diseño elegante y exclusivo
-- Validación de formularios
+- **Globo Terráqueo 3D Interactivo**: Explora el mundo con un globo 3D renderizado con Three.js
+- **Puntos Verdes de Emisoras**: Visualiza emisoras de radio de diferentes ciudades alrededor del mundo
+- **Reproducción en Vivo**: Escucha emisoras de radio en tiempo real directamente desde la aplicación
+- **Interfaz Minimalista**: Diseño limpio y moderno inspirado en Radio Garden
+- **Rotación Suave**: El globo rota automáticamente cuando no está siendo manipulado
+- **Fondo Estrellado**: Ambiente espacial con estrellas animadas de fondo
+- **Panel Inferior Compacto**: Información de la emisora seleccionada en un panel inferior elegante
+- **Responsive**: Diseño adaptativo para dispositivos móviles y tablets
 
-### 📱 Secciones Principales
+## 🚀 Tecnologías Utilizadas
 
-#### Feeds
-- Publicaciones de usuarios verificados
-- Sistema de "Esmeraldas" en lugar de likes (representa dinero)
-- Interfaz premium con diseño oscuro y dorado
-- Comentarios y compartir
+- **Ionic**: Framework para aplicaciones móviles híbridas
+- **Angular**: Framework de desarrollo web
+- **Three.js**: Biblioteca 3D para renderizar el globo terráqueo
+- **TypeScript**: Lenguaje de programación tipado
+- **SCSS**: Preprocesador CSS para estilos avanzados
 
-#### Reels
-- Videos cortos estilo TikTok/Instagram Reels
-- Sistema de esmeraldas integrado
-- Navegación vertical por reels
-- Diseño full-screen inmersivo
+## 📦 Instalación
 
-#### Perfil/Menu
-- Perfil de usuario premium
-- Estadísticas (Esmeraldas, Conexiones, Publicaciones)
-- Menú de opciones exclusivas
-- Verificación premium
+1. Clona el repositorio:
+```bash
+git clone https://github.com/CbedoyaRamirez/radioplanet.git
+cd radioplanet
+```
 
-## Tecnologías Utilizadas
-
-- **Ionic 7** - Framework móvil
-- **Angular 17** - Framework web
-- **TypeScript** - Lenguaje de programación
-- **SCSS** - Estilos avanzados
-- **Angular Animations** - Animaciones fluidas
-
-## Instalación
-
-1. Instalar dependencias:
+2. Instala las dependencias:
 ```bash
 npm install
 ```
 
-2. Ejecutar la aplicación:
-```bash
-npm start
-```
-
-3. Para desarrollo móvil:
+3. Ejecuta la aplicación en modo desarrollo:
 ```bash
 ionic serve
 ```
 
-## Estructura del Proyecto
+## 🏗️ Construcción
+
+Para construir la aplicación para producción:
+
+```bash
+npm run build
+```
+
+## 📱 Uso
+
+1. **Explorar el Globo**: Arrastra el globo con el mouse o el dedo para rotarlo y explorar diferentes ubicaciones
+2. **Hacer Zoom**: Usa la rueda del mouse o pellizca para hacer zoom
+3. **Seleccionar Emisora**: Haz clic en un punto verde para seleccionar una emisora
+4. **Reproducir Radio**: Haz clic en el botón de play en el panel inferior para comenzar a escuchar
+5. **Pausar**: Haz clic nuevamente en el botón para pausar la reproducción
+
+## 🎨 Características de Diseño
+
+- **Panel Inferior**: Aparece automáticamente cuando se selecciona una emisora
+- **Botón de Play/Pause**: Botón circular que cambia de blanco a verde cuando está reproduciendo
+- **Indicador de Ondas**: Animación de ondas de sonido cuando la radio está reproduciendo
+- **Fondo Negro**: Diseño minimalista con fondo negro puro
+- **Estrellas Animadas**: Efecto de parpadeo sutil en las estrellas de fondo
+
+## 📂 Estructura del Proyecto
 
 ```
 facegold/
 ├── src/
 │   ├── app/
 │   │   ├── pages/
-│   │   │   ├── login/          # Página de login
-│   │   │   ├── feeds/          # Página de feeds
-│   │   │   ├── reels/          # Página de reels
-│   │   │   └── menu/           # Página de perfil/menu
-│   │   ├── tabs/               # Navegación por tabs
-│   │   ├── app.component.ts    # Componente principal
+│   │   │   ├── globe/          # Página principal del globo
+│   │   │   └── login/           # Página de inicio de sesión
+│   │   ├── app.component.ts
 │   │   └── app-routing.module.ts
-│   ├── assets/                 # Recursos estáticos
-│   ├── index.html
-│   ├── main.ts
-│   └── styles.css              # Estilos globales
+│   └── styles.css
 ├── package.json
-├── angular.json
-└── ionic.config.json
+└── README.md
 ```
 
-## Características de Diseño
+## 🔧 Configuración
 
-- **Tema Oscuro Premium**: Fondo negro con acentos dorados
-- **Esmeraldas**: Sistema de moneda virtual representado por 💎
-- **Animaciones Suaves**: Transiciones elegantes en toda la app
-- **UI Exclusiva**: Diseño que refleja lujo y exclusividad
+La aplicación está configurada para:
+- Redirección automática al globo después del login
+- Rotación automática del globo cuando está inactivo
+- Zoom con límites configurables
+- Reproducción de audio HTML5 para streams de radio
 
-## Próximas Mejoras
+## 📝 Notas
 
-- Integración con backend
-- Sistema de autenticación real
-- Chat entre usuarios
-- Notificaciones push
-- Compartir contenido
-- Búsqueda de usuarios
+- Las emisoras de radio requieren URLs de streaming válidas
+- Algunas emisoras pueden tener restricciones CORS
+- La aplicación funciona mejor en dispositivos con soporte WebGL
 
-## Licencia
+## 🤝 Contribuciones
 
-MIT
+Las contribuciones son bienvenidas. Por favor:
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
 
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT.
+
+## 👨‍💻 Autor
+
+Desarrollado con ❤️ para explorar el mundo a través de la radio.
+
+---
+
+**Radio Planet** - Conectando el mundo a través de las ondas de radio 🌍📻
