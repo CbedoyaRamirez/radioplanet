@@ -1,0 +1,97 @@
+/* Estilos globales para FaceGold - Diseño Premium */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ion-color-primary: #FFD700;
+  --ion-color-primary-rgb: 255, 215, 0;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #e0be00;
+  --ion-color-primary-tint: #ffdb1a;
+
+  --ion-color-secondary: #1a1a1a;
+  --ion-color-secondary-rgb: 26, 26, 26;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #171717;
+  --ion-color-secondary-tint: #313131;
+
+  --ion-color-emerald: #50C878;
+  --ion-color-emerald-rgb: 80, 200, 120;
+  --ion-color-emerald-contrast: #ffffff;
+  --ion-color-emerald-shade: #46b068;
+  --ion-color-emerald-tint: #62ce86;
+
+  --ion-background-color: #0a0a0a;
+  --ion-text-color: #ffffff;
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--ion-font-family);
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: var(--ion-text-color);
+}
+
+/* Animaciones personalizadas */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Estilos para esmeraldas */
+.emerald {
+  color: var(--ion-color-emerald);
+  font-weight: bold;
+}
+
+.emerald-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: linear-gradient(135deg, #50C878 0%, #2d8650 100%);
+  border-radius: 50%;
+  position: relative;
+}
+
+.emerald-icon::before {
+  content: '💎';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+

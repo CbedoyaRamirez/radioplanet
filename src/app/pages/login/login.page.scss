@@ -1,0 +1,303 @@
+.login-content {
+  --background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  position: relative;
+}
+
+.logo-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.radio {
+  width: 280px;
+  height: 180px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  position: relative;
+  animation: radioGlow 3s ease-in-out infinite;
+}
+
+@keyframes radioGlow {
+  0%, 100% {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 215, 0, 0.4);
+  }
+}
+
+.radio-display {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-frequency {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.radio-waves {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 40px;
+}
+
+.wave {
+  width: 4px;
+  background: linear-gradient(to top, #FFD700, #FFA500);
+  border-radius: 2px;
+  animation: waveAnimation 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+.wave1 {
+  height: 8px;
+  animation-delay: 0s;
+}
+
+.wave2 {
+  height: 16px;
+  animation-delay: 0.1s;
+}
+
+.wave3 {
+  height: 24px;
+  animation-delay: 0.2s;
+}
+
+.wave4 {
+  height: 16px;
+  animation-delay: 0.3s;
+}
+
+.wave5 {
+  height: 8px;
+  animation-delay: 0.4s;
+}
+
+@keyframes waveAnimation {
+  0%, 100% {
+    transform: scaleY(0.3);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.radio-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.radio-knob {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(255, 215, 0, 0.4);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  position: relative;
+  animation: knobRotate 4s linear infinite;
+}
+
+.radio-knob::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+}
+
+@keyframes knobRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.app-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.custom-item {
+  --background: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-radius: 12px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --inner-padding-end: 0;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.custom-item ion-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.custom-input {
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.5);
+}
+
+.password-item {
+  position: relative;
+}
+
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.password-mask {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 1;
+  pointer-events: none;
+  padding-top: 20px;
+}
+
+.mask-dot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.toggle-password-btn {
+  --color: rgba(255, 255, 255, 0.7);
+  --padding-start: 8px;
+  --padding-end: 8px;
+  margin-left: 8px;
+  z-index: 3;
+}
+
+.login-button {
+  --background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  --color: #000;
+  --border-radius: 12px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &[disabled] {
+    --background: rgba(255, 255, 255, 0.1);
+    --color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+  }
+}
+
+.footer-text {
+  margin-top: 2rem;
+  text-align: center;
+
+  p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 40px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5);
+  }
+}
+

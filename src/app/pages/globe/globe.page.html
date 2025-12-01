@@ -1,0 +1,38 @@
+
+<ion-content class="globe-content">
+  <div class="globe-wrapper">
+    <div #globeContainer class="globe-container"></div>
+    
+    <!-- Panel inferior estilo Radio Garden -->
+    <div class="station-panel" *ngIf="selectedStation" [class.visible]="selectedStation">
+      <div class="station-panel-content">
+        <div class="station-info">
+          <div class="station-name-location">
+            <h2 class="station-name">{{ selectedStation.name }}</h2>
+            <p class="station-location">{{ selectedStation.city }}, {{ selectedStation.country }}</p>
+          </div>
+          
+          <button 
+            class="play-pause-btn"
+            [class.playing]="isPlaying && currentPlayingStation?.id === selectedStation.id"
+            [class.loading]="isLoading && currentPlayingStation?.id === selectedStation.id"
+            (click)="toggleRadio(selectedStation)">
+            <ion-icon 
+              [name]="(isPlaying && currentPlayingStation?.id === selectedStation.id) ? 'pause' : 'play'"
+              class="play-pause-icon">
+            </ion-icon>
+          </button>
+        </div>
+        
+        <!-- Indicador de ondas de sonido cuando está reproduciendo -->
+        <div class="sound-waves-indicator" *ngIf="isPlaying && currentPlayingStation?.id === selectedStation.id">
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

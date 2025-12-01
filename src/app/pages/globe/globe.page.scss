@@ -1,0 +1,197 @@
+.globe-content {
+  --background: #000000;
+  --overflow: hidden;
+}
+
+.globe-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.globe-container {
+  width: 100%;
+  height: 100vh;
+  cursor: grab;
+  
+  canvas {
+    width: 100% !important;
+    height: 100vh !important;
+    display: block;
+  }
+  
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+// Panel inferior estilo Radio Garden
+.station-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.visible {
+    transform: translateY(0);
+  }
+}
+
+.station-panel-content {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.5);
+  
+  @media (max-width: 768px) {
+    padding: 1.25rem 1.5rem;
+  }
+}
+
+.station-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.station-name-location {
+  flex: 1;
+  min-width: 0;
+  
+  .station-name {
+    margin: 0 0 0.25rem 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+    }
+  }
+  
+  .station-location {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.play-pause-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+  
+  &.playing {
+    background: #4ade80;
+    
+    .play-pause-icon {
+      color: #ffffff;
+    }
+  }
+  
+  &.loading {
+    opacity: 0.6;
+    cursor: wait;
+  }
+  
+  .play-pause-icon {
+    font-size: 28px;
+    color: #000000;
+    margin-left: 2px; // Ajuste visual para centrar el icono de play
+  }
+  
+  @media (max-width: 768px) {
+    width: 48px;
+    height: 48px;
+    
+    .play-pause-icon {
+      font-size: 24px;
+    }
+  }
+}
+
+.sound-waves-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 1rem;
+  height: 24px;
+}
+
+.wave-bar {
+  width: 3px;
+  height: 16px;
+  background: #4ade80;
+  border-radius: 2px;
+  animation: waveAnimation 1s ease-in-out infinite;
+  
+  &:nth-child(1) {
+    animation-delay: 0s;
+    height: 12px;
+  }
+  
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+    height: 20px;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 0.2s;
+    height: 16px;
+  }
+  
+  &:nth-child(4) {
+    animation-delay: 0.3s;
+    height: 12px;
+  }
+}
+
+@keyframes waveAnimation {
+  0%, 100% {
+    transform: scaleY(0.4);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

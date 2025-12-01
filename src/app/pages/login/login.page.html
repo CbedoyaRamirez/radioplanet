@@ -1,0 +1,77 @@
+<ion-content class="login-content">
+  <div class="login-container">
+    <div class="logo-section" @fadeIn>
+      <div class="radio-container">
+        <div class="radio">
+          <div class="radio-display">
+            <div class="radio-frequency">FM 98.5</div>
+            <div class="radio-waves">
+              <div class="wave wave1"></div>
+              <div class="wave wave2"></div>
+              <div class="wave wave3"></div>
+              <div class="wave wave4"></div>
+              <div class="wave wave5"></div>
+            </div>
+          </div>
+          <div class="radio-controls">
+            <div class="radio-knob"></div>
+            <div class="radio-knob"></div>
+          </div>
+        </div>
+      </div>
+      <h1 class="app-title">RadioGlobe</h1>
+      <p class="app-subtitle">Emisoras del Mundo</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form" @fadeIn>
+      <ion-item class="custom-item">
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input
+          type="email"
+          formControlName="email"
+          placeholder="tu@email.com"
+          class="custom-input">
+        </ion-input>
+      </ion-item>
+
+      <ion-item class="custom-item password-item">
+        <ion-label position="stacked">Contraseña</ion-label>
+        <div class="password-input-wrapper">
+          <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="••••••••"
+            class="custom-input password-input"
+            (ionInput)="onPasswordInput($event)">
+          </ion-input>
+          
+          <!-- Animación de ocultamiento de contraseña -->
+          <div class="password-mask" [@passwordHide]="isTyping ? 'hidden' : 'visible'">
+            <div class="mask-dot" *ngFor="let dot of getPasswordDots()"></div>
+          </div>
+
+          <ion-button
+            fill="clear"
+            class="toggle-password-btn"
+            (click)="togglePasswordVisibility()">
+            <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        type="submit"
+        class="login-button"
+        [disabled]="!loginForm.valid">
+        <ion-icon name="diamond-outline" slot="start"></ion-icon>
+        Ingresar
+      </ion-button>
+    </form>
+
+    <div class="footer-text" @fadeIn>
+      <p>Acceso exclusivo verificado</p>
+    </div>
+  </div>
+</ion-content>
+
